@@ -1,15 +1,11 @@
 #include <iostream>
 #include <string>
 #include "OutputMaker.h"
+#include "InputTest.h"
+#include "TestMode.h"
 
 enum {
   ERROR = -1, INPUT_TEST, OUTPUT_MAKE
-};
-
-enum TestMode {
-  SCANF = 1,
-  CIN_SYNC_WITH_STDIO_TRUE,
-  CIN_SYNC_WITH_STDIO_FALSE
 };
 
 static std::string file_name;
@@ -25,8 +21,15 @@ int main(int argc, const char *argv[]) {
   OutputMaker output_maker;
 
   switch (mode) {
-    case INPUT_TEST:
+    case INPUT_TEST: {
+      double result = InputTest::input_test(test_mode);
+      if (result == -1.) {
+        std::cerr << "Test Error\n";
+        return -1;
+      }
+      std::cout << "Test Result: " << result << " ms\n";
       break;
+    }
     case OUTPUT_MAKE:
       output_maker.make_output_file(file_name, sample_size);
       break;
@@ -82,6 +85,7 @@ void print_usage(const char *exe_name) {
                                         "\t-i\t\tInput Test\n"
                                         "\t-o\t\tOutput File Make\n"
                                         "\t-s sample size\tOutput File Line Size(Only Output Mode)\n"
-                                        "\t-f filename\tInput/Output File Name\n"
-                                        "\t-m MODE\t\tTest Mode(1:scanf, 2:cin(sync_with_stdio(true)), 3:cin(sync_with_stdio(false), Only Input Mode)\n";
+                                        "\t-f filename\tOutput File Name\n"
+                                        "\t-m MODE\t\tTest Mode(1:scanf, 2:cin(sync_with_stdio(true)), 3:cin(sync_with_stdio(false), Only Input Mode)\n"
+                                        "\t< filename Input File Name\n";
 }
