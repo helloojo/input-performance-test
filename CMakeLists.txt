@@ -3,4 +3,4 @@ project(input_test)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(input_test main.cc)
+add_executable(input_test main.cc OutputMaker.cc OutputMaker.h InputTest.h)
