@@ -7,7 +7,7 @@ enum {
 };
 
 enum TestMode {
-  SCANF,
+  SCANF = 1,
   CIN_SYNC_WITH_STDIO_TRUE,
   CIN_SYNC_WITH_STDIO_FALSE
 };
@@ -62,9 +62,14 @@ int parse_options(int argc, const char *argv[]) {
       case 'f':
         file_name = argv[i++];
         break;
-      case 'm':
-        test_mode = static_cast<TestMode>(atoi(argv[i++]));
+      case 'm': {
+        int parse_int = atoi(argv[i++]);
+        if (parse_int < 1 || parse_int > 3) {
+          return ERROR;
+        }
+        test_mode = static_cast<TestMode>(parse_int);
         break;
+      }
       default:
         return ERROR;
     }
@@ -78,5 +83,5 @@ void print_usage(const char *exe_name) {
                                         "\t-o\t\tOutput File Make\n"
                                         "\t-s sample size\tOutput File Line Size(Only Output Mode)\n"
                                         "\t-f filename\tInput/Output File Name\n"
-                                        "\t-m MODE\t\tTest Mode(0:scanf, 1:cin(sync_with_stdio(true)), 2:cin(sync_with_stdio(false), Only Input Mode)\n";
+                                        "\t-m MODE\t\tTest Mode(1:scanf, 2:cin(sync_with_stdio(true)), 3:cin(sync_with_stdio(false), Only Input Mode)\n";
 }
