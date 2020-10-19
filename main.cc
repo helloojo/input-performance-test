@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+#include <cstring>
 #include "OutputMaker.h"
 #include "InputTest.h"
 #include "TestMode.h"
