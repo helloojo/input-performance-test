@@ -24,7 +24,7 @@ int main(int argc, const char *argv[]) {
 
   switch (mode) {
     case INPUT_TEST: {
-      double result = InputTest::input_test(test_mode);
+      double result = InputTest::input_test(test_mode, file_name);
       if (result == -1.) {
         std::cerr << "Test Error\n";
         return -1;
@@ -88,10 +88,10 @@ void print_usage(const char *exe_name) {
                                         "\t-o\t\tOutput File Make\n"
                                         "\t-s sample size\tOutput File Line Size(Only Output Mode)\n"
                                         "\t-f filename\tOutput File Name\n"
-                                        "\t-m MODE\t\tTest Mode"
-                                        "\t\t1  scanf"
-                                        "\t\t2  cin, sync_with_stdio(true)"
-                                        "\t\t3  cin, sync_with_stdio(false)"
-                                        "\t\t4  cin, sync_with_stdio(false), cin.tie(nullptr)\n"
+                                        "\t-m MODE\t\tTest Mode\n"
+                                        "\t\t\t1  scanf\n"
+                                        "\t\t\t2  cin, sync_with_stdio(true)\n"
+                                        "\t\t\t3  cin, sync_with_stdio(false)\n"
+                                        "\t\t\t4  cin, sync_with_stdio(false), cin.tie(nullptr)\n"
                                         "\t< filename Input File Name\n";
 }

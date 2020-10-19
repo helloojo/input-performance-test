@@ -1,12 +1,14 @@
 #include "InputTest.h"
 #include <iostream>
+#include <cstdio>
 #include <chrono>
 #include <functional>
 
 InputTest::InputTest() = default;
 
-double InputTest::input_test(TestMode test_mode) {
+double InputTest::input_test(TestMode test_mode, const std::string &file_name) {
   std::function<void()> test_function;
+  freopen(file_name.c_str(), "r", stdin);
   switch (test_mode) {
     case SCANF:
       test_function = scanf_test;

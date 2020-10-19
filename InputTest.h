@@ -7,7 +7,7 @@
 class InputTest {
  public:
   InputTest();
-  static double input_test(TestMode test_mode);
+  static double input_test(TestMode test_mode, const std::string& file_name);
  private:
   static void scanf_test();
   static void cin_test();
