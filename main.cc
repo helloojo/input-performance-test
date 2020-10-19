@@ -69,7 +69,7 @@ int parse_options(int argc, const char *argv[]) {
         break;
       case 'm': {
         int parse_int = atoi(argv[i++]);
-        if (parse_int < 1 || parse_int > 3) {
+        if (parse_int < SCANF || parse_int > CIN_SYNC_WITH_STDIO_FALSE_TIE_NULLPTR) {
           return ERROR;
         }
         test_mode = static_cast<TestMode>(parse_int);
