@@ -86,6 +86,10 @@ void print_usage(const char *exe_name) {
                                         "\t-o\t\tOutput File Make\n"
                                         "\t-s sample size\tOutput File Line Size(Only Output Mode)\n"
                                         "\t-f filename\tOutput File Name\n"
-                                        "\t-m MODE\t\tTest Mode(1:scanf, 2:cin(sync_with_stdio(true)), 3:cin(sync_with_stdio(false), Only Input Mode)\n"
+                                        "\t-m MODE\t\tTest Mode"
+                                        "\t\t1  scanf"
+                                        "\t\t2  cin, sync_with_stdio(true)"
+                                        "\t\t3  cin, sync_with_stdio(false)"
+                                        "\t\t4  cin, sync_with_stdio(false), cin.tie(nullptr)\n"
                                         "\t< filename Input File Name\n";
 }

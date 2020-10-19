@@ -19,6 +19,11 @@ double InputTest::input_test(TestMode test_mode) {
       std::ios_base::sync_with_stdio(false);
       test_function = cin_test;
       break;
+    case CIN_SYNC_WITH_STDIO_FALSE_TIE_NULLPTR:
+      std::ios_base::sync_with_stdio(false);
+      std::cin.tie(nullptr);
+      test_function = cin_test;
+      break;
     default:
       return -1.;
   }
