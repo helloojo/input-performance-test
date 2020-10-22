@@ -18,3 +18,9 @@
 `cin, sync_with_stdio(false)` 테스트
 ##### 4
 `cin, sync_with_stdio(false), cin.tie(nullptr)` 테스트
+
+### 예시
+#### 테스트용 파일 생성
+![image](https://user-images.githubusercontent.com/28619559/96888121-404d0d80-14c0-11eb-9929-c080f1cdad40.png)
+#### 테스트
+![image](https://user-images.githubusercontent.com/28619559/96887995-1bf13100-14c0-11eb-85ba-e67cd29987d3.png)
