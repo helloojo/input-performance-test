@@ -92,6 +92,5 @@ void print_usage(const char *exe_name) {
                                         "\t\t\t1  scanf\n"
                                         "\t\t\t2  cin, sync_with_stdio(true)\n"
                                         "\t\t\t3  cin, sync_with_stdio(false)\n"
-                                        "\t\t\t4  cin, sync_with_stdio(false), cin.tie(nullptr)\n"
-                                        "\t< filename Input File Name\n";
+                                        "\t\t\t4  cin, sync_with_stdio(false), cin.tie(nullptr)\n";
 }
